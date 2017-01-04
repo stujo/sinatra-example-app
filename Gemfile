@@ -7,6 +7,7 @@ gem "rake"
 
 group :test, :development do
   gem 'rspec'
+  gem 'sass'
 end
 
 group :test do
