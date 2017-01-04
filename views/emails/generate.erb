@@ -1,26 +1,54 @@
+<div class="section no-pad-bot" id="generate-banner">
+  <div class="container">
+    <br><br>
+    <h1 class="header center orange-text">Job Summary</h1>
+    <div class="row center">
+      <h5 class="header col s12 light">We took <%= @generation_time.round(2) %> seconds to generate <%= @list_size %> emails with <%= (@duplication_rate * 100) %>% duplication and <%= @filtering_time.round(2) %> seconds to filter the list to <%= @filtered_size %> unique items</h5>
 
-<h1>Summary</h1>
-<div>I took <%= @generation_time.round(2) %> seconds to generate <%= @list_size %> emails with <%= (@duplication_rate * 100) %>% duplication. It then took me <%= @filtering_time.round(2) %> seconds to filter the list to <%= @filtered_size %> items
+      <a class="btn-large waves-effect waves-light" href="#email_generate_form">Rinse and Repeat
+        <i class="material-icons right">refresh</i>
+      </a>
+
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="section">
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="icon-block">
+          <h2 class="center light-blue-text"><i class="material-icons">build</i></h2>
+          <h5 class="center">Generated Emails</h5>
+          <div class="collection">
+            <% @raw_sample.each do |email| %>
+              <a href="mailto:<%= email %>" class="collection-item"><%= email %></a>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m6">
+        <div class="icon-block">
+          <h2 class="center light-blue-text"><i class="material-icons">check_circle</i></h2>
+          <h5 class="center">Filtered Emails</h5>
+          <div class="collection">
+            <% @filtered_sample.each do |email| %>
+              <a href="mailto:<%= email %>" class="collection-item"><%= email %></a>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div id="raw_sample_container">
-<h2>Unfiltered Emails</h2>
-<ul>
-  <% @raw_sample.each do |email| %>
-    <li><a href="mailto:<%= email %>"><%= email %></a></li>
-  <% end %>
-</ul>
+<a name="email_generate_form"/></a>
+<div class="section">
+  <div class="container">
+    <h1 class="header center orange-text">Chef List Generator</h1>
+    <div class="row center">
+      <h5 class="header col s12 light">Choose the size of your list and the duplication rate</h5>
+    </div>
+  </div>
 </div>
 
-<div id="filtered_sample_container">
-<h2>Filtered Emails</h2>
-<ul>
-  <% @filtered_sample.each do |email| %>
-    <li><a href="mailto:<%= email %>"><%= email %></a></li>
-  <% end %>
-</ul>
-</div>
-
-<hr/>
-
-<a href="/">&lt; Go Back</a>
+<%= erb :email_generate_form %>
