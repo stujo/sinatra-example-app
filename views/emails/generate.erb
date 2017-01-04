@@ -1,0 +1,26 @@
+
+<h1>Summary</h1>
+<div>I took <%= @generation_time.round(2) %> seconds to generate <%= @list_size %> emails with <%= (@duplication_rate * 100) %>% duplication. It then took me <%= @filtering_time.round(2) %> seconds to filter the list to <%= @filtered_size %> items
+</div>
+
+<div id="raw_sample_container">
+<h2>Unfiltered Emails</h2>
+<ul>
+  <% @raw_sample.each do |email| %>
+    <li><a href="mailto:<%= email %>"><%= email %></a></li>
+  <% end %>
+</ul>
+</div>
+
+<div id="filtered_sample_container">
+<h2>Filtered Emails</h2>
+<ul>
+  <% @filtered_sample.each do |email| %>
+    <li><a href="mailto:<%= email %>"><%= email %></a></li>
+  <% end %>
+</ul>
+</div>
+
+<hr/>
+
+<a href="/">&lt; Go Back</a>
