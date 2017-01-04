@@ -4,11 +4,16 @@
 
 > Service to de-duplicate 100,000 emails in less than 1 second
 
-## Tools
+* Live Here : [http://chefmailer.herokuapp.com/](http://chefmailer.herokuapp.com/)
+
+## Tools and Services
 
 * Sinatra - Web App Server
 * rspec - Testing
 * Faker - Generate Random Emails
+* GitHub - git, pull requests and issue tracking
+* Codeship - Continuous Integration and Deployment [ ![Codeship Status for stujo/sinatra-example-app](https://app.codeship.com/projects/56ae5a50-b469-0134-003c-6ae403bdbf4d/status?branch=master)](https://app.codeship.com/projects/193727)
+* Heroku - Easy App Hosting
 
 ## Installation
 
