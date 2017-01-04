@@ -23,6 +23,12 @@ $ bundle install
 $ bundle exec rspec
 ```
 
+Because the performance test is slow we exclude it from the default test suite via ``.rspec``. In order to run it use this:
+
+```
+$ bundle exec rspec --tag slow
+```
+
 ## Next Steps
 
 * Add Web Front End
