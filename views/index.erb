@@ -1,1 +1,15 @@
-INDEX!
+<h1>Generate Emails</h1>
+<div>Generate Random Emails List with Duplicates</div>
+<form action="/emails/generate" method="GET">
+  <label label-for="list_size">List Size</label>
+  <select name="list_size">
+    <option>10</option>
+    <option>100</option>
+    <option>1000</option>
+    <option>10000</option>
+    <option>100000</option>
+  </select>
+  <label label-for="duplication_rate">Duplication Rate</label>
+  <input type="range" name="duplication_rate" value="0.5" min="0" max="1.0" step="0.05"/>
+  <input type="submit" value="Generate"/>
+</form>
