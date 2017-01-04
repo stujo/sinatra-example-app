@@ -3,11 +3,12 @@ require_relative('./spec_helper')
 require('unique_email_list')
 require('email_generator')
 
+# Comment o
 describe UniqueEmailList do
   let(:list_size) { 100_000 }
   let(:duplication_rate) { 0.5 }
 
-  it('Should filter 100,000 emails with 50 % duplication in less than 1 second') do
+  it('Should filter 100,000 emails with 50 % duplication in less than 1 second', slow: true) do
 
     # This takes longer than the filtering....
     puts "Generating #{list_size} Random Emails with #{ (duplication_rate * 100).floor }% duplication ..."
