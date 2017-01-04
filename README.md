@@ -2,14 +2,13 @@
 
 ## Overview
 
-> Goal to de-duplicate 100,000 emails in less than 1 second
+> Service to de-duplicate 100,000 emails in less than 1 second
 
 ## Tools
 
-* ruby - Selected Language
+* Sinatra - Web App Server
 * rspec - Testing
 * Faker - Generate Random Emails
-* Sinatra - Web App Server
 
 ## Installation
 
@@ -39,8 +38,12 @@ This project uses the sass version of materialize, if you make any changes you'l
 $ rake sass
 ```
 
-## Next Steps
+## Start Server
 
-* Add Web Front End
+This project uses sinatra, which is based on rack 
 
+**Note:** No database is required for this app
 
+```
+$ rackup
+```
