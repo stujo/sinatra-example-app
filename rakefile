@@ -1,20 +1,23 @@
-require 'rspec/core/rake_task'
+begin
+  require 'rspec/core/rake_task'
 
-RSpec::Core::RakeTask.new :specs do |task|
-  task.pattern = Dir['spec/**/*_spec.rb']
-end
+  RSpec::Core::RakeTask.new :specs do |task|
+    task.pattern = Dir['spec/**/*_spec.rb']
+  end
 
-desc 'Run all tests regardless of tags'
-RSpec::Core::RakeTask.new('specs:all') do |task|
-  task.pattern = './spec/**/*_spec.rb'
-  # Load the tagless options file
-  task.rspec_opts = '-O .rspec-no-tags'
+  desc 'Run all tests regardless of tags'
+  RSpec::Core::RakeTask.new('specs:all') do |task|
+    task.pattern = './spec/**/*_spec.rb'
+    # Load the tagless options file
+    task.rspec_opts = '-O .rspec-no-tags'
+  end
+
+  task :default => ['specs']
+rescue LoadError => e
+  puts 'Skipping RSpec tasks in production'
 end
 
 desc 'Compile sass templates to css'
 task :sass do
   exec('sass vendor/materialize-src/sass/materialize.scss > ./public/css/materialize.css');
 end
-
-
-task :default => ['specs']
