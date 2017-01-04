@@ -3,7 +3,7 @@ source "https://rubygems.org"
 
 gem "sinatra"
 gem "faker"
-
+gem "rake"
 
 group :test, :development do
   gem 'rspec'

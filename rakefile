@@ -1,0 +1,14 @@
+require 'rspec/core/rake_task'
+
+RSpec::Core::RakeTask.new :specs do |task|
+  task.pattern = Dir['spec/**/*_spec.rb']
+end
+
+desc 'Run all tests regardless of tags'
+RSpec::Core::RakeTask.new('specs:all') do |task|
+  task.pattern = './spec/**/*_spec.rb'
+  # Load the tagless options file
+  task.rspec_opts = '-O .rspec-no-tags'
+end
+
+task :default => ['specs']

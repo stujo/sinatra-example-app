@@ -19,14 +19,16 @@ $ bundle install
 
 ## Testing
 
+To run the basic tests:
+
 ```
-$ bundle exec rspec
+$ bundle exec rake
 ```
 
 Because the performance test is slow we exclude it from the default test suite via ``.rspec``. In order to run it use this:
 
 ```
-$ bundle exec rspec --tag slow
+$ bundle exec rake specs:all
 ```
 
 ## Next Steps
