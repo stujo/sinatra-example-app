@@ -31,6 +31,14 @@ Because the performance test is slow we exclude it from the default test suite v
 $ bundle exec rake specs:all
 ```
 
+## Build
+
+This project uses the sass version of materialize, if you make any changes you'll need to rebuild the css files
+
+```
+$ rake sass
+```
+
 ## Next Steps
 
 * Add Web Front End

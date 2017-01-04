@@ -11,4 +11,10 @@ RSpec::Core::RakeTask.new('specs:all') do |task|
   task.rspec_opts = '-O .rspec-no-tags'
 end
 
+desc 'Compile sass templates to css'
+task :sass do
+  exec('sass vendor/materialize-src/sass/materialize.scss > ./public/css/materialize.css');
+end
+
+
 task :default => ['specs']
