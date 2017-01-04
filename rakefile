@@ -13,6 +13,6 @@ begin
   end
 
   task :default => ['specs']
-rescue
+rescue LoadError => e
   puts 'Skipping RSpec tasks in production'
 end
