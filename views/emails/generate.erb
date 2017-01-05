@@ -54,3 +54,8 @@
 </div>
 
 <%= erb :email_generate_form %>
+<% if @sampling %>
+  <script>
+    var toastMessage = 'Only the first 100 rows are being shown';
+  </script>
+<% end %>
