@@ -9,6 +9,9 @@ class EmailDupesApp < Sinatra::Base
   end
 
   get '/emails/generate' do
+
+    SAMPLE_SIZE = 100
+
     @list_size = params[:list_size].to_i
     @duplication_rate = params[:duplication_rate].to_f
 
@@ -32,9 +35,11 @@ class EmailDupesApp < Sinatra::Base
 
     @generation_time = generated_timer - start_timer
     @filtering_time = end_timer - generated_timer
-    @raw_sample = raw_emails.take(100)
-    @filtered_sample = filtered_emails.take(100)
+    @raw_sample = raw_emails.take(SAMPLE_SIZE)
+    @filtered_sample = filtered_emails.take(SAMPLE_SIZE)
     @filtered_size = filtered_emails.length
+
+    @sampling = raw_emails.length > SAMPLE_SIZE
 
     erb :'emails/generate'
   end
